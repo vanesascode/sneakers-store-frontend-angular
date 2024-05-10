@@ -1,4 +1,6 @@
-# MyApp
+# Clothes store - Angular Frontend
+
+run `ng serve --open`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
