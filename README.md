@@ -1,4 +1,12 @@
-# Clothes store - Angular Frontend
+# VELOCITY FIT: Sneakers store (Angular)
+
+![red sneaker](readmeImage.png)
+
+## Visit the backend with EXPRESS in this [LINK](https://github.com/vanesascode/sneakers-store-backend-express)
+
+---
+
+---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
@@ -22,7 +30,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## PrimeNG
+## ⭐️ PrimeNG
 
 primeng is a popular UI component library for Angular applications. It provides a wide range of components such as buttons, calendars, data tables, dialogs, and more, to help developers build modern and responsive user interfaces in their Angular projects.
 
