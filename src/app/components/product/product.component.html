@@ -1,4 +1,5 @@
 <div class="column gap-1 wrapper">
+  <!-- Product Info -->
   <img src="{{ product.image }}" alt="Product image" />
   <h2 class="title">{{ product.name }}</h2>
   <div class="row full-center gap-05">
@@ -10,4 +11,26 @@
     [readonly]="true"
     iconCancelClass="hidden"
   />
+
+  <!-- Action buttons -->
+  <div class="row gap-05">
+    <button
+      type="button"
+      pButton
+      icon="pi pi-pencil"
+      (click)="editProduct()"
+      label="Edit"
+    ></button>
+    <button
+      type="button"
+      pButton
+      icon="pi pi-trash"
+      (click)="deleteProduct()"
+      label="Delete"
+      class="p-button-danger"
+      #deleteButton
+    ></button>
+  </div>
 </div>
+
+<p-confirmPopup></p-confirmPopup>
