@@ -36,11 +36,59 @@ export class HomeComponent {
         page,
         perPage,
       })
-      .subscribe((products: Products) => {
-        this.products = products.items;
-        this.totalRecords = products.total;
+      .subscribe({
+        next: (data: Products) => {
+          this.products = data.items;
+          this.totalRecords = data.total;
+        },
+        error: (error) => {
+          console.error(error);
+        },
       });
   }
+
+  editProduct(product: Product, id: number) {
+    this.productsService
+      .editProduct(environment.apiUrl + environment.apiClothes + id, product)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.fetchProducts(0, this.rows);
+        },
+        error: (error) => {
+          console.error(error);
+        },
+      });
+  }
+
+  deleteProduct(id: number) {
+    this.productsService
+      .deleteProduct(environment.apiUrl + environment.apiClothes + id)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.fetchProducts(0, this.rows);
+        },
+        error: (error) => {
+          console.error(error);
+        },
+      });
+  }
+
+  addProduct(product: Product) {
+    this.productsService
+      .addProduct(environment.apiUrl + environment.apiClothes, product)
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          this.fetchProducts(0, this.rows);
+        },
+        error: (error) => {
+          console.error(error);
+        },
+      });
+  }
+
   ngOnInit() {
     this.fetchProducts(0, this.rows);
   }
