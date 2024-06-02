@@ -37,8 +37,8 @@ export class ProductComponent {
   @ViewChild('deleteButton') deleteButton: any;
 
   @Input() product!: Product;
-  @Output() edit: EventEmitter<Product> = new EventEmitter();
-  @Output() delete: EventEmitter<Product> = new EventEmitter();
+  @Output() edit: EventEmitter<Product> = new EventEmitter<Product>();
+  @Output() delete: EventEmitter<Product> = new EventEmitter<Product>();
 
   editProduct() {
     this.edit.emit(this.product);
@@ -47,7 +47,7 @@ export class ProductComponent {
   confirmDelete() {
     this.confirmationService.confirm({
       target: this.deleteButton.nativeElement,
-      message: 'Are you sure you want to delete this product?',
+      message: 'Are you sure that you want to delete this product?',
       accept: () => {
         this.deleteProduct();
       },
