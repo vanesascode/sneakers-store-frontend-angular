@@ -4,7 +4,7 @@
   [modal]="true"
   [closable]="false"
 >
-  <div class="column gap-1" [formGroup]="productForm">
+  <div class="column gap-1 form-wrapper" [formGroup]="productForm">
     <!-- Name -->
     <div class="row gap-05">
       <span class="price-label">Name:</span>
@@ -40,7 +40,7 @@
       icon="pi pi-check"
       (click)="onConfirm()"
       label="Confirm"
-      [disabled]="!productForm.valid"
+      [class.disabled]="!productForm.valid"
     ></button>
     <button
       type="button"
