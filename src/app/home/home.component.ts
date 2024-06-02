@@ -24,13 +24,13 @@ import { ButtonModule } from 'primeng/button';
 export class HomeComponent {
   constructor(private productsService: ProductsService) {}
 
-  @ViewChild('Paginator') paginator: Paginator | undefined;
+  @ViewChild('paginator') paginator: Paginator | undefined;
 
   products: Product[] = [];
 
   totalRecords: number = 0;
 
-  rows: number = 5;
+  rows: number = 12;
 
   displayEditPopup: boolean = false;
   displayAddPopup: boolean = false;
