@@ -77,5 +77,6 @@ export class EditPopupComponent {
 
   onCancel() {
     this.display = false;
+    this.displayChange.emit(this.display);
   }
 }
