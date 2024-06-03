@@ -3,14 +3,23 @@
   <button
     type="button"
     pButton
-    icon="pi pi-plus"
     (click)="toggleAddPopup()"
-    label="Add Product"
+    label="+"
     class="add-product-btn"
   ></button>
 
   <!-- Products Section -->
-  <div class="row wrap gap-2 space-between">
+
+  <div *ngIf="!products || products.length === 0" class="loading">
+    <!-- Loading Indicator -->
+
+    <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
+    <p class="text-center">
+      Be patient, the server is hosted on onRender Free. Soon the sneakers will
+      appear!
+    </p>
+  </div>
+  <div class="row wrap gap-2 justify-center">
     <app-product
       *ngFor="let product of products"
       [product]="product"
@@ -23,7 +32,6 @@
   <p-paginator
     [rows]="rows"
     [totalRecords]="totalRecords"
-    [rowsPerPageOptions]="[6, 12, 20]"
     (onPageChange)="onPageChange($event)"
     #paginator
   ></p-paginator>
