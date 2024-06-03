@@ -52,10 +52,6 @@ app-root {
   margin-bottom: 1.5rem;
 }
 
-.wrap {
-  flex-wrap: wrap;
-}
-
 .gap-05 {
   gap: 0.5rem;
 }
@@ -83,6 +79,10 @@ app-root {
 .full-center {
   align-items: center;
   justify-content: center;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .hidden {
