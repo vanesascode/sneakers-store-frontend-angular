@@ -47,3 +47,9 @@ input.ng-invalid {
     box-shadow: 0 0 10px 2.5px rgba(247, 247, 247, 0.4) !important;
   }
 }
+
+.p-inputtext {
+  .p-element {
+    border-color: none !important;
+  }
+}
