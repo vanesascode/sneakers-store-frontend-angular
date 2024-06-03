@@ -1,1 +1,114 @@
-<p>contact-us works!</p>
+<div class="column full-center">
+  <form
+    class="contact-form"
+    [formGroup]="contactForm"
+    (ngSubmit)="$event.preventDefault(); submitForm()"
+  >
+    <div class="column gap-1 mb-25">
+      <label class="" for="senderName">NAME:</label>
+      <input
+        id="senderName"
+        type="text"
+        pInputText
+        placeholder="Enter your name"
+        formControlName="senderName"
+        aria-describedby="username-help"
+      />
+
+      <div
+        *ngIf="
+          contactForm.get('senderName')?.invalid &&
+          (contactForm.get('senderName')?.dirty ||
+            contactForm.get('senderName')?.touched)
+        "
+      >
+        <small
+          class="validation-text"
+          *ngIf="contactForm.get('senderName')?.errors?.['required']"
+          >This field is required
+        </small>
+      </div>
+    </div>
+
+    <div class="column gap-1 mb-25">
+      <label class="form-label" for="senderEmail">EMAIL:</label>
+      <input
+        type="email"
+        formControlName="senderEmail"
+        pInputText
+        placeholder="Enter your email"
+        aria-describedby="useremail-help"
+        id="senderEmail"
+      />
+
+      <div
+        *ngIf="
+          contactForm.get('senderEmail')?.invalid &&
+          (contactForm.get('senderEmail')?.dirty ||
+            contactForm.get('senderEmail')?.touched)
+        "
+      >
+        <small
+          class="validation-text"
+          *ngIf="contactForm.get('senderEmail')?.errors?.['required']"
+          >This field is required
+        </small>
+
+        <small
+          class="validation-text"
+          *ngIf="contactForm.get('senderEmail')?.errors?.['email']"
+          >Please enter a valid email
+        </small>
+
+        <small
+          class="validation-text"
+          *ngIf="contactForm.get('senderEmail')?.errors?.['invalidEmailDomain']"
+          >Please, enter your business email
+        </small>
+      </div>
+    </div>
+
+    <div class="column gap-1 mb-25">
+      <label class="form-label">MESSAGE:</label>
+      <textarea
+        class="form-control"
+        rows="7"
+        formControlName="senderMessage"
+        placeholder="Tell us how can we help you"
+        aria-describedby="useremail-help"
+        id="senderEmail"
+        pInputTextarea
+      ></textarea>
+
+      <div
+        *ngIf="
+          contactForm.get('senderMessage')?.invalid &&
+          (contactForm.get('senderMessage')?.dirty ||
+            contactForm.get('senderMessage')?.touched)
+        "
+      >
+        <small
+          class="validation-text"
+          *ngIf="contactForm.get('senderMessage')?.errors?.['required']"
+          >This field is required
+        </small>
+
+        <small
+          class="validation-text"
+          *ngIf="contactForm.get('senderMessage')?.errors?.['minlength']"
+          >Please enter at least 10 characters
+        </small>
+      </div>
+    </div>
+    <div class="full-center column">
+      <button
+        type="submit"
+        class="btn btn-primary submit-button"
+        [disabled]="contactForm.invalid"
+        pButton
+      >
+        Send Message
+      </button>
+    </div>
+  </form>
+</div>
