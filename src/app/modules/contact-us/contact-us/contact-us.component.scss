@@ -1,0 +1,38 @@
+.validation-text {
+  color: red;
+}
+
+.ng-invalid:not(form) {
+  border: 1px solid rgba(140, 137, 137, 0.286) !important;
+}
+
+input,
+textarea {
+  padding: 1rem;
+}
+
+.p-card-body {
+  background-color: black !important;
+}
+
+.contact-form {
+  background-color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 450px;
+}
+
+@media screen and (max-width: 500px) {
+  .contact-form {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+.submit-button {
+  box-shadow: 0 0 10px 2.5px rgba(247, 247, 247, 0.4);
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  margin: 1rem;
+}
