@@ -5,3 +5,45 @@
 input.ng-invalid {
   border-color: red !important;
 }
+
+.p-button-danger {
+  background-color: rgb(179, 115, 98) !important;
+  color: white;
+  border: none;
+}
+
+.p-button-help {
+  background-color: rgb(47, 59, 69);
+  color: white;
+  border: none;
+}
+
+.p-paginator {
+  border: none !important;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: black;
+
+  .p-highlight {
+    border-radius: 10px;
+    background-color: rgb(249, 247, 247);
+  }
+}
+
+.p-dialog {
+  .p-dialog-footer {
+    border-top: none;
+  }
+
+  .p-element {
+    margin: 0 !important;
+    border-radius: 10pxa;
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+  }
+
+  .ng-trigger {
+    box-shadow: 0 0 10px 2.5px rgba(247, 247, 247, 0.4) !important;
+  }
+}
