@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-edit-popup',
@@ -22,6 +23,7 @@ import { ButtonModule } from 'primeng/button';
     RatingModule,
     ButtonModule,
     ReactiveFormsModule,
+    InputTextModule,
   ],
   templateUrl: './edit-popup.component.html',
   styleUrl: './edit-popup.component.scss',
