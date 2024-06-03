@@ -1,6 +1,10 @@
 .wrapper {
   width: 250px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   img {
     aspect-ratio: 1/0.5;
