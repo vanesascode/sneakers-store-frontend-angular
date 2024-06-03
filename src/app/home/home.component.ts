@@ -7,6 +7,7 @@ import { environment } from '../../environment';
 import { Paginator, PaginatorModule } from 'primeng/paginator';
 import { EditPopupComponent } from '../components/edit-popup/edit-popup.component';
 import { ButtonModule } from 'primeng/button';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
     PaginatorModule,
     EditPopupComponent,
     ButtonModule,
+    ProgressSpinnerModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
