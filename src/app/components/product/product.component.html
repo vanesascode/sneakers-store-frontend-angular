@@ -6,7 +6,7 @@
   <h2 class="title">{{ product.name | truncateName : 16 : "..." }}</h2>
 
   <!-- Product Price -->
-  <div class="row gap-05">
+  <div class="row gap-05 justify-center">
     <span class="price-label">Price:</span>
     <span class="price">{{ product.price | price }}</span>
   </div>
@@ -19,13 +19,14 @@
   ></p-rating>
 
   <!-- Action buttons -->
-  <div class="row gap-05">
+  <div class="row gap-05 justify-center">
     <button
       type="button"
       pButton
       icon="pi pi-pencil"
       (click)="editProduct()"
       label="Edit"
+      class="p-button-help button"
     ></button>
     <button
       type="button"
@@ -33,7 +34,7 @@
       icon="pi pi-trash"
       (click)="confirmDelete()"
       label="Delete"
-      class="p-button-danger"
+      class="p-button-danger button"
       #deleteButton
     ></button>
   </div>
