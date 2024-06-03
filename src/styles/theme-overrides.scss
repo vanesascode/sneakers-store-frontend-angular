@@ -32,13 +32,22 @@ input.ng-invalid {
 }
 
 .p-dialog {
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: black;
+  .p-dialog-header {
+    background-color: black;
+    padding: 1rem;
+  }
   .p-dialog-footer {
     border-top: none;
+    padding: 1rem;
+    background-color: black;
   }
 
-  .p-element {
+  .p-button {
     margin: 0 !important;
-    border-radius: 10pxa;
+    border-radius: 10px;
     margin-right: 0.5rem !important;
     margin-left: 0.5rem !important;
   }
