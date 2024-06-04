@@ -81,7 +81,7 @@ export class HomeComponent {
   fetchProducts(page: number, perPage: number) {
     this.productsService
       .getProducts(
-        'https://sneakers-store-backend-express.onrender.com/clothes/',
+        'https://sneakers-store-backend-express.onrender.com/clothes',
         {
           page,
           perPage,
@@ -101,7 +101,7 @@ export class HomeComponent {
   editProduct(product: Product, id: number) {
     this.productsService
       .editProduct(
-        'https://sneakers-store-backend-express.onrender.com/clothes/' + id,
+        'https://sneakers-store-backend-express.onrender.com/clothes' + id,
         product
       )
       .subscribe({
@@ -119,7 +119,7 @@ export class HomeComponent {
   deleteProduct(id: number) {
     this.productsService
       .deleteProduct(
-        'https://sneakers-store-backend-express.onrender.com/clothes/' + id
+        'https://sneakers-store-backend-express.onrender.com/clothes' + id
       )
       .subscribe({
         next: (data) => {
@@ -136,7 +136,7 @@ export class HomeComponent {
   addProduct(product: Product) {
     this.productsService
       .addProduct(
-        'https://sneakers-store-backend-express.onrender.com/clothes/',
+        'https://sneakers-store-backend-express.onrender.com/clothes',
         product
       )
       .subscribe({
