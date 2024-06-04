@@ -3,7 +3,6 @@ import { ProductsService } from '../services/products.service';
 import { Product, Products } from '../../types';
 import { ProductComponent } from '../components/product/product.component';
 import { CommonModule } from '@angular/common';
-import { environment } from '../../environment';
 import { Paginator, PaginatorModule } from 'primeng/paginator';
 import { EditPopupComponent } from '../components/edit-popup/edit-popup.component';
 import { ButtonModule } from 'primeng/button';
@@ -81,10 +80,13 @@ export class HomeComponent {
 
   fetchProducts(page: number, perPage: number) {
     this.productsService
-      .getProducts(environment.apiUrl + environment.apiClothes, {
-        page,
-        perPage,
-      })
+      .getProducts(
+        'https://sneakers-store-backend-express.onrender.com/clothes/',
+        {
+          page,
+          perPage,
+        }
+      )
       .subscribe({
         next: (data: Products) => {
           this.products = data.items;
@@ -98,7 +100,10 @@ export class HomeComponent {
 
   editProduct(product: Product, id: number) {
     this.productsService
-      .editProduct(environment.apiUrl + environment.apiClothes + id, product)
+      .editProduct(
+        'https://sneakers-store-backend-express.onrender.com/clothes/' + id,
+        product
+      )
       .subscribe({
         next: (data) => {
           console.log(data);
@@ -113,7 +118,9 @@ export class HomeComponent {
 
   deleteProduct(id: number) {
     this.productsService
-      .deleteProduct(environment.apiUrl + environment.apiClothes + id)
+      .deleteProduct(
+        'https://sneakers-store-backend-express.onrender.com/clothes/' + id
+      )
       .subscribe({
         next: (data) => {
           console.log(data);
@@ -128,7 +135,10 @@ export class HomeComponent {
 
   addProduct(product: Product) {
     this.productsService
-      .addProduct(environment.apiUrl + environment.apiClothes, product)
+      .addProduct(
+        'https://sneakers-store-backend-express.onrender.com/clothes/',
+        product
+      )
       .subscribe({
         next: (data) => {
           console.log(data);
