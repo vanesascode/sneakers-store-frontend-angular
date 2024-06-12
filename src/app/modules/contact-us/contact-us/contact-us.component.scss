@@ -1,18 +1,6 @@
-.validation-text {
-  color: red;
-}
-
-.ng-invalid:not(form) {
-  border: 1px solid rgba(140, 137, 137, 0.286) !important;
-}
-
 input,
 textarea {
   padding: 1rem;
-}
-
-.p-card-body {
-  background-color: black !important;
 }
 
 .contact-form {
@@ -29,7 +17,11 @@ textarea {
   }
 }
 
-.submit-button {
+.contact-form__validation-text {
+  color: red;
+}
+
+.contact-form__submit-button {
   box-shadow: 0 0 10px 2.5px rgba(247, 247, 247, 0.4);
   border-radius: 10px;
   font-weight: 700;
