@@ -1,4 +1,4 @@
-.add-product-btn {
+.home__add-product-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -11,13 +11,13 @@
   border: 1px solid rgb(57, 55, 55);
 }
 
-.wrap {
+.home__wrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
 }
 
-.loading {
+.home__loading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,37 +27,37 @@
 }
 
 @media screen and (max-width: 600px) {
-  .wrap {
+  .home__wrapper {
     grid-template-columns: 1fr;
   }
 }
 
 @media screen and (min-width: 600px) {
-  .wrap {
+  .home__wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 900px) {
-  .wrap {
+  .home__wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media screen and (min-width: 1300px) {
-  .wrap {
+  .home__wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (min-width: 1700px) {
-  .wrap {
+  .home__wrapper {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
 @media screen and (min-width: 2100px) {
-  .wrap {
+  .home__wrapper {
     grid-template-columns: repeat(6, 1fr);
   }
 }
