@@ -1,4 +1,4 @@
-.wrapper {
+.product {
   width: 250px;
   text-align: center;
   display: flex;
@@ -6,29 +6,29 @@
   justify-content: center;
   align-items: center;
 
-  img {
+  .product__button {
+    border-radius: 10px;
+  }
+
+  .product__img {
     aspect-ratio: 1/0.5;
     width: 100%;
     object-fit: contain;
     border-radius: 15px;
   }
 
-  .title {
+  .product__title {
     font-size: 1.5rem;
     font-weight: 700;
   }
 
-  .price-label {
+  .product__price-label {
     font-size: 1rem;
     font-weight: 300;
   }
 
-  .price {
+  .product__price {
     font-weight: 500;
     font-size: 1rem;
-  }
-
-  .button {
-    border-radius: 10px;
   }
 }
