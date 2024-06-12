@@ -5,12 +5,12 @@
     pButton
     (click)="toggleAddPopup()"
     label="+"
-    class="add-product-btn"
+    class="home__add-product-btn"
   ></button>
 
   <!-- Products Section -->
 
-  <div *ngIf="!products || products.length === 0" class="loading">
+  <div *ngIf="!products || products.length === 0" class="home__loading">
     <!-- Loading Indicator -->
 
     <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
@@ -19,7 +19,7 @@
       appear!
     </p>
   </div>
-  <div class="row wrap gap-2 justify-center">
+  <div class="row home__wrapper gap-2 justify-center">
     <app-product
       *ngFor="let product of products"
       [product]="product"
