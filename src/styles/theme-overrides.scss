@@ -62,3 +62,7 @@ input.ng-invalid {
     border-color: none !important;
   }
 }
+
+.ng-invalid:not(form) {
+  border: 1px solid rgba(140, 137, 137, 0.286) !important;
+}
