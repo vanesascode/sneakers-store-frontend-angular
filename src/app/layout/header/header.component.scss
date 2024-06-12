@@ -1,4 +1,17 @@
-.wrapper {
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a.active {
+  font-weight: 300;
+  color: white;
+  &.active {
+    font-weight: 900;
+  }
+}
+
+.header {
   width: 100%;
   padding: 2rem;
   box-sizing: border-box;
@@ -8,36 +21,23 @@
   justify-content: space-between;
   background-color: black;
 
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
-  a.active {
-    font-weight: 300;
-    color: white;
-    &.active {
-      font-weight: 900;
-    }
-  }
-
-  .logo {
+  .header__logo {
     object-fit: contain;
     height: 3rem;
     margin-right: auto;
   }
 
   @media screen and (max-width: 350px) {
-    .logo {
+    .header__logo {
       object-fit: contain;
-      height: 2rem;
+      height: 2.5rem;
       margin-right: auto;
     }
   }
 }
 
 @media screen and (max-width: 500px) {
-  .wrapper {
+  .header {
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
