@@ -1,15 +1,17 @@
 <div class="row justify-center">
-  <div class="column gap-1 wrapper align-center">
+  <div class="column gap-1 product align-center">
     <!-- Product Thumbnail -->
-    <img [src]="product.image" alt="Product Thumbnail" />
+    <img [src]="product.image" class="product__img" alt="Product Thumbnail" />
 
     <!-- Product Name -->
-    <h2 class="title">{{ product.name | truncateName : 16 : "..." }}</h2>
+    <h2 class="product__title">
+      {{ product.name | truncateName : 16 : "..." }}
+    </h2>
 
     <!-- Product Price -->
     <div class="row gap-05 justify-center">
-      <span class="price-label">Price:</span>
-      <span class="price">{{ product.price | price }}</span>
+      <span class="product__price-label">Price:</span>
+      <span class="product__price">{{ product.price | price }}</span>
     </div>
 
     <!-- Product Rating (PrimeNg rating component) -->
@@ -27,7 +29,7 @@
         icon="pi pi-pencil"
         (click)="editProduct()"
         label="Edit"
-        class="p-button-help button"
+        class="p-button-help product__button"
       ></button>
       <button
         type="button"
@@ -35,7 +37,7 @@
         icon="pi pi-trash"
         (click)="confirmDelete()"
         label="Delete"
-        class="p-button-danger button"
+        class="p-button-danger product__button"
         #deleteButton
       ></button>
     </div>
