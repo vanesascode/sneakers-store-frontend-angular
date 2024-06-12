@@ -23,7 +23,7 @@
         "
       >
         <small
-          class="validation-text"
+          class="contact-form__validation-text"
           *ngIf="contactForm.get('senderName')?.errors?.['required']"
           >This field is required
         </small>
@@ -49,19 +49,19 @@
         "
       >
         <small
-          class="validation-text"
+          class="contact-form__validation-text"
           *ngIf="contactForm.get('senderEmail')?.errors?.['required']"
           >This field is required
         </small>
 
         <small
-          class="validation-text"
+          class="contact-form__validation-text"
           *ngIf="contactForm.get('senderEmail')?.errors?.['email']"
           >Please enter a valid email
         </small>
 
         <small
-          class="validation-text"
+          class="contact-form__validation-text"
           *ngIf="contactForm.get('senderEmail')?.errors?.['invalidEmailDomain']"
           >Please, enter your business email
         </small>
@@ -88,13 +88,13 @@
         "
       >
         <small
-          class="validation-text"
+          class="contact-form__validation-text"
           *ngIf="contactForm.get('senderMessage')?.errors?.['required']"
           >This field is required
         </small>
 
         <small
-          class="validation-text"
+          class="contact-form__validation-text"
           *ngIf="contactForm.get('senderMessage')?.errors?.['minlength']"
           >Please enter at least 10 characters
         </small>
@@ -103,7 +103,7 @@
     <div class="full-center column">
       <button
         type="submit"
-        class="btn btn-primary submit-button"
+        class="btn btn-primary contact-form__submit-button"
         [disabled]="contactForm.invalid"
         pButton
       >
