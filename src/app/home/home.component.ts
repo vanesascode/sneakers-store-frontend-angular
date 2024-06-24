@@ -36,6 +36,8 @@ export class HomeComponent {
   displayEditPopup: boolean = false;
   displayAddPopup: boolean = false;
 
+  url: string = import.meta.env['NG_APP_API'];
+
   toggleEditPopup(product: Product) {
     this.selectedProduct = product;
     this.displayEditPopup = true;
@@ -80,13 +82,10 @@ export class HomeComponent {
 
   fetchProducts(page: number, perPage: number) {
     this.productsService
-      .getProducts(
-        'https://sneakers-store-backend-express.onrender.com/clothes',
-        {
-          page,
-          perPage,
-        }
-      )
+      .getProducts(this.url, {
+        page,
+        perPage,
+      })
       .subscribe({
         next: (data: Products) => {
           this.products = data.items;
@@ -99,56 +98,42 @@ export class HomeComponent {
   }
 
   editProduct(product: Product, id: number) {
-    this.productsService
-      .editProduct(
-        'https://sneakers-store-backend-express.onrender.com/clothes/' + id,
-        product
-      )
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          this.fetchProducts(0, this.rows);
-          this.resetPagination();
-        },
-        error: (error) => {
-          console.error(error);
-        },
-      });
+    this.productsService.editProduct(this.url + id, product).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.fetchProducts(0, this.rows);
+        this.resetPagination();
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
   }
 
   deleteProduct(id: number) {
-    this.productsService
-      .deleteProduct(
-        'https://sneakers-store-backend-express.onrender.com/clothes/' + id
-      )
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          this.fetchProducts(0, this.rows);
-          this.resetPagination();
-        },
-        error: (error) => {
-          console.error(error);
-        },
-      });
+    this.productsService.deleteProduct(this.url + id).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.fetchProducts(0, this.rows);
+        this.resetPagination();
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
   }
 
   addProduct(product: Product) {
-    this.productsService
-      .addProduct(
-        'https://sneakers-store-backend-express.onrender.com/clothes',
-        product
-      )
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-          this.fetchProducts(0, this.rows);
-          this.resetPagination();
-        },
-        error: (error) => {
-          console.error(error);
-        },
-      });
+    this.productsService.addProduct(this.url, product).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.fetchProducts(0, this.rows);
+        this.resetPagination();
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
   }
 
   ngOnInit() {

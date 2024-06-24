@@ -48,6 +48,37 @@ Add this to the angular.json file:
 ],
 ```
 
+## ⭐️ ENV
+
+`ng generate environments`
+
+`ng add @ngx-env/builder`
+
+`@types/node`
+
+Add this to tsconfig.app.json:
+
+```
+  "types": ["node"]
+```
+
+Create a file "environment.common.ts":
+
+```
+export const commonEnvironment = {
+  api: import.meta.env['NG_APP_API'],
+};
+
+```
+
+And a .env file:
+
+NG_APP_API=****\*\*****\*\*\*\*****\*\*****
+
+Use:
+
+url: string = import.meta.env['NG_APP_API'];
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
